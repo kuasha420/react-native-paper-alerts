@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link id="bootsplashPreload" rel="preload" as="image" href="/bootsplash_logo.png"
+    imagesrcset="/bootsplash_logo@2x.png 2x, /bootsplash_logo@3x.png 3x, /bootsplash_logo@4x.png 4x">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <title>Paper Alerts</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body,
+    #root {
+      display: flex;
+      max-height: 100vh;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      flex: 1;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar,
+    #root::-webkit-scrollbar {
+      display: none;
+    }
+
+    #root {
+      flex-direction: column;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline-style: none;
+      box-shadow: none;
+      outline: none;
+      border-color: transparent;
+    }
+
+    div[role='button'] * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  </style>
+
+
+  <style id="bootsplashStyle">
+    :root {
+      --bootsplash-color: #FFFFFF;
+    }
+
+    #bootsplash {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      z-index: 99;
+      background-color: var(--bootsplash-color);
+    }
+
+    #bootsplash.visibleFade {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 500ms linear;
+    }
+
+    #bootsplash.hiddenFade {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s 500ms, opacity 500ms linear;
+    }
+
+    #bootsplash.visible {
+      display: flex;
+    }
+
+    #bootsplash.hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="bootsplash" class="visible">
+    <img id="bootsplashImage" height="200" width="200" src="/bootsplash_logo.png"
+      srcset="/bootsplash_logo@2x.png 2x, /bootsplash_logo@3x.png 3x, /bootsplash_logo@4x.png 4x">
+  </div>
+</body>
+
+</html>

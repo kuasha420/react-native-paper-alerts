@@ -1,0 +1,133 @@
+{
+  "name": "react-native-paper-alerts",
+  "version": "0.1.0",
+  "description": "Cross Platform Material Alert and Prompt for React Native",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "react-native-paper-alerts.podspec",
+    "!lib/typescript/example",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"src/**/*.+(ts|js|jsx|tsx)\"",
+    "format": "prettier \"src/**/*.+(ts|js|jsx|tsx)\" --write",
+    "prepare": "bob build",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "pods": "cd example && pod-install --quiet",
+    "bootstrap": "yarn example && yarn && yarn pods"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-paper",
+    "react-native-alert",
+    "react-native-prompt",
+    "ios",
+    "android",
+    "web"
+  ],
+  "repository": "https://github.com/kuasha420/react-native-paper-alerts",
+  "author": "Arafat Zahan <kuasha420@gmail.com> (https://github.com/kuasha420)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuasha420/react-native-paper-alerts/issues"
+  },
+  "homepage": "https://github.com/kuasha420/react-native-paper-alerts#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@release-it/conventional-changelog": "^2.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^16.0.0",
+    "@types/react-native": "^0.64.10",
+    "commitlint": "^11.0.0",
+    "eslint": "^7.14.0",
+    "husky": "^4.3.8",
+    "jest": "^26.0.1",
+    "lint-staged": "^11.1.1",
+    "pod-install": "^0.1.24",
+    "prettier": "^2.3.2",
+    "react": "17.0.1",
+    "react-native": "0.64.2",
+    "react-native-builder-bob": "^0.18.0",
+    "react-native-paper": "^4.9.2",
+    "release-it": "^14.2.2",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-native": ">=0.59.0",
+    "react-native-paper": ">=4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn typescript && lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "materialdesigniconsIntellisense.insertStyle": "param",
+  "materialdesigniconsIntellisense.matchers": [
+    {
+      "match": "\\bname\\=\"{param}\"",
+      "insert": "{param}",
+      "displayName": "React Native Vector Icon",
+      "name": "rnvec"
+    },
+    {
+      "match": "\\bicon\\=\"{param}\"",
+      "insert": "{param}",
+      "displayName": "React Native Icon Props",
+      "name": "rnicon"
+    },
+    {
+      "match": "\\bicon:\\ '{param}'",
+      "insert": "{param}",
+      "displayName": "React Native Icon Object",
+      "name": "rniconobj"
+    },
+    {
+      "match": "\\bdrawerIcon:\\ \\(\\)\\ \\=\\>\\ '{param}'",
+      "insert": "{param}",
+      "displayName": "React Native Drawer Icon",
+      "name": "rndrawericon"
+    },
+    {
+      "match": "\\btabBarIcon:\\ '{param}'",
+      "insert": "{param}",
+      "displayName": "React Native Tab Bar Icon",
+      "name": "rniconobj"
+    }
+  ]
+}
