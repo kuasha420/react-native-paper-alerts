@@ -1,6 +1,25 @@
-# react-native-paper-alerts
+# React Native Paper Alerts
 
 Cross Platform Material Alert and Prompt for React Native. It tries to follow the API and function signature of React Native's built-in Alert Module and works on Android, IOS and Web.
+
+![React Native Paper Alerts](/screenshots/sc1.png?raw=true 'Simple Alert')
+![React Native Paper Alerts](/screenshots/sc2.png?raw=true 'Alert With Multiple Butons')
+![React Native Paper Alerts](/screenshots/sc3.png?raw=true 'Alert With Stacked Butons')
+![React Native Paper Alerts](/screenshots/sc4.png?raw=true 'Simple Prompt')
+![React Native Paper Alerts](/screenshots/sc5.png?raw=true 'Simple Prompt (Focused)')
+![React Native Paper Alerts](/screenshots/sc6.png?raw=true 'Prompt With Outlined Input')
+![React Native Paper Alerts](/screenshots/sc7.png?raw=true 'Prompt With Label')
+![React Native Paper Alerts](/screenshots/sc8.png?raw=true 'Prompt With Label (Focused)')
+![React Native Paper Alerts](/screenshots/sc9.png?raw=true 'Login Prompt')
+![React Native Paper Alerts](/screenshots/sc10.png?raw=true 'Simple Alert (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc1.png?raw=true 'Alert With Multiple Butons (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc12.png?raw=true 'Alert With Stacked Butons (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc13.png?raw=true 'Simple Prompt (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc14.png?raw=true 'Simple Prompt (Focused) (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc15.png?raw=true 'Prompt With Outlined Input (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc16.png?raw=true 'Prompt With Label (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc17.png?raw=true 'Prompt With Label (Focused) (Dark Mode)')
+![React Native Paper Alerts](/screenshots/sc18.png?raw=true 'Login Prompt (Dark Mode)')
 
 ## Installation
 
