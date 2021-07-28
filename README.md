@@ -2,24 +2,10 @@
 
 Cross Platform Material Alert and Prompt for React Native. It tries to follow the API and function signature of React Native's built-in Alert Module and works on Android, IOS and Web.
 
-![React Native Paper Alerts](/screenshots/sc1.png?raw=true 'Simple Alert')
-![React Native Paper Alerts](/screenshots/sc2.png?raw=true 'Alert With Multiple Butons')
-![React Native Paper Alerts](/screenshots/sc3.png?raw=true 'Alert With Stacked Butons')
-![React Native Paper Alerts](/screenshots/sc4.png?raw=true 'Simple Prompt')
-![React Native Paper Alerts](/screenshots/sc5.png?raw=true 'Simple Prompt (Focused)')
-![React Native Paper Alerts](/screenshots/sc6.png?raw=true 'Prompt With Outlined Input')
-![React Native Paper Alerts](/screenshots/sc7.png?raw=true 'Prompt With Label')
-![React Native Paper Alerts](/screenshots/sc8.png?raw=true 'Prompt With Label (Focused)')
-![React Native Paper Alerts](/screenshots/sc9.png?raw=true 'Login Prompt')
-![React Native Paper Alerts](/screenshots/sc10.png?raw=true 'Simple Alert (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc1.png?raw=true 'Alert With Multiple Butons (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc12.png?raw=true 'Alert With Stacked Butons (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc13.png?raw=true 'Simple Prompt (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc14.png?raw=true 'Simple Prompt (Focused) (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc15.png?raw=true 'Prompt With Outlined Input (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc16.png?raw=true 'Prompt With Label (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc17.png?raw=true 'Prompt With Label (Focused) (Dark Mode)')
-![React Native Paper Alerts](/screenshots/sc18.png?raw=true 'Login Prompt (Dark Mode)')
+| Color Scheme | Simple Alert                         | Alert With Multiple Butons | Alert With Stacked Butons            | Simple Prompt | Simple Prompt (Focused)              | Prompt With Outlined Input | Prompt With Label                    | Prompt With Label (Focused) | Login Prompt                         |
+| ------------ | ------------------------------------ | -------------------------- | ------------------------------------ | ------------- | ------------------------------------ | -------------------------- | ------------------------------------ | --------------------------- | ------------------------------------ | ----------- | ------------------------------------ | ----------- | ------------------------------------ | ----------- | ------------------------------------ | ----------- | ------------------------------------ | ----------- |
+| Light        | ![SC](/screenshots/sc1.png?raw=true  | height=200)                | ![SC](/screenshots/sc2.png?raw=true  | height=200)   | ![SC](/screenshots/sc3.png?raw=true  | height=200)                | ![SC](/screenshots/sc4.png?raw=true  | height=200)                 | ![SC](/screenshots/sc5.png?raw=true  | height=200) | ![SC](/screenshots/sc6.png?raw=true  | height=200) | ![SC](/screenshots/sc7.png?raw=true  | height=200) | ![SC](/screenshots/sc8.png?raw=true  | height=200) | ![SC](/screenshots/sc9.png?raw=true  | height=200) |
+| Dark         | ![SC](/screenshots/sc10.png?raw=true | height=200)                | ![SC](/screenshots/sc11.png?raw=true | height=200)   | ![SC](/screenshots/sc12.png?raw=true | height=200)                | ![SC](/screenshots/sc13.png?raw=true | height=200)                 | ![SC](/screenshots/sc14.png?raw=true | height=200) | ![SC](/screenshots/sc15.png?raw=true | height=200) | ![SC](/screenshots/sc16.png?raw=true | height=200) | ![SC](/screenshots/sc17.png?raw=true | height=200) | ![SC](/screenshots/sc18.png?raw=true | height=200) |
 
 ## Installation
 
