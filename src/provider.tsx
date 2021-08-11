@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { KeyboardEventName, Platform } from 'react-native';
-import { Animated, Easing, Keyboard, StyleSheet } from 'react-native';
+import { Animated, Easing, Keyboard, StyleSheet, useWindowDimensions } from 'react-native';
 import { Button, Dialog, Paragraph, Portal, TextInput, useTheme } from 'react-native-paper';
 import AlertsContext from './context';
 import reducer, { initialState } from './reducer';
@@ -29,6 +29,8 @@ const AlertsProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [value, setValue] = useState('');
   const [password, setPassword] = useState('');
+
+  const dimensions = useWindowDimensions();
 
   const dismiss = useCallback(() => dispatch({ type: 'DISMISS', payload: {} }), []);
 
@@ -313,7 +315,13 @@ const AlertsProvider: React.FC = ({ children }) => {
       <Portal>
         <Animated.View
           pointerEvents="box-none"
-          style={[styles.animate, { transform: [{ translateY: translateY.current }] }]}
+          style={[
+            styles.animate,
+            {
+              minHeight: dimensions.height + 300,
+              transform: [{ translateY: translateY.current }],
+            },
+          ]}
         >
           <Dialog
             visible={state.visible}
