@@ -469,9 +469,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-end',
   },
-  animate: {
-    flex: 1,
-    marginVertical: -300,
+  animate: 
+    Platform.OS === 'web' 
+      ? {
+          flex:1
+        }
+      : {
+          flex: 1,
+          marginVertical: -300,
   },
   login: {
     marginBottom: 16,
