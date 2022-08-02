@@ -25,8 +25,8 @@ const keyboardEvents: Record<'show' | 'hide', KeyboardEventName> = Platform.sele
   },
 });
 
-const AlertsProvider: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) => {
+  const [state, dispatch] = useReducer(reducer, {...initialState, ...(options && { options })});
   const [value, setValue] = useState('');
   const [password, setPassword] = useState('');
 
@@ -336,6 +336,11 @@ const AlertsProvider: React.FC = ({ children }) => {
               {
                 ...(state.options.maxWidth && {
                   maxWidth: state.options.width ?? state.options.maxWidth,
+                }),
+              },
+              {
+                ...(state.options.minWidth && {
+                  minWidth: state.options.width ?? state.options.minWidth,
                 }),
               },
             ]}
