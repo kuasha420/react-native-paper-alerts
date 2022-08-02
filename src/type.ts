@@ -21,6 +21,7 @@ export interface AlertsOptions {
   keyboardAppearance?: 'default' | 'dark' | 'light';
   width?: string | number;
   /** maxWidth is very useful for Web */
+  minWidth?: string | number;
   maxWidth?: string | number;
 }
 
@@ -106,4 +107,8 @@ type AlertsType = 'ALERT' | 'PROMPT' | 'DISMISS';
 export interface AlertAction {
   type: AlertsType;
   payload: Partial<AlertsState>;
+}
+
+export interface AlertsProviderProps {
+  options?: AlertsOptions
 }
