@@ -7,6 +7,7 @@ import reducer, { initialState } from './reducer';
 import {
   AlertButton,
   AlertsMethods,
+  AlertsProviderProps,
   DefaultPromptCallback,
   LoginPromptButton,
   LoginPromptCallback,
@@ -26,7 +27,7 @@ const keyboardEvents: Record<'show' | 'hide', KeyboardEventName> = Platform.sele
 });
 
 const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) => {
-  const [state, dispatch] = useReducer(reducer, {...initialState, ...(options && { options })});
+  const [state, dispatch] = useReducer(reducer, { ...initialState, ...(options && { options }) });
   const [value, setValue] = useState('');
   const [password, setPassword] = useState('');
 
@@ -34,18 +35,26 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
 
   const alerts: AlertsMethods = useMemo(
     () => ({
-      alert: (title, message, button, options) =>
+      alert: (title, message, button, alertOptions) =>
         dispatch({
           type: 'ALERT',
           payload: {
             title,
             message,
             button,
-            ...(options && { options }),
+            ...(alertOptions && { options: alertOptions }),
             visible: true,
           },
         }),
-      prompt: (title, message, callbackOrButtons, type, defaultValue, keyboardType, options) => {
+      prompt: (
+        title,
+        message,
+        callbackOrButtons,
+        type,
+        defaultValue,
+        keyboardType,
+        alertOptions
+      ) => {
         setValue(defaultValue ?? '');
         setPassword('');
         if (typeof callbackOrButtons === 'function') {
@@ -61,7 +70,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                     { text: 'Ok', onPress: callbackOrButtons as RegularPromptCallback },
                     { text: 'Cancel', style: 'cancel' },
                   ],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -78,7 +87,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                     { text: 'Ok', onPress: callbackOrButtons as RegularPromptCallback },
                     { text: 'Cancel', style: 'cancel' },
                   ],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -94,7 +103,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                     { text: 'Ok', onPress: callbackOrButtons as LoginPromptCallback },
                     { text: 'Cancel', style: 'cancel' },
                   ],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -106,7 +115,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   title,
                   message,
                   button: [{ text: 'Ok', onPress: callbackOrButtons as DefaultPromptCallback }],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -122,7 +131,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                     { text: 'Ok', onPress: callbackOrButtons as RegularPromptCallback },
                     { text: 'Cancel', style: 'cancel' },
                   ],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -137,7 +146,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   message,
                   keyboardType,
                   prompt: [{ text: 'Ok' }, { text: 'Cancel', style: 'cancel' }],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -151,7 +160,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   keyboardType,
                   secureTextEntry: true,
                   prompt: [{ text: 'Ok' }, { text: 'Cancel', style: 'cancel' }],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -164,7 +173,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   message,
                   keyboardType,
                   login: [{ text: 'Ok' }, { text: 'Cancel', style: 'cancel' }],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -176,7 +185,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   title,
                   message,
                   button: [{ text: 'Ok' }],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -189,7 +198,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   message,
                   keyboardType,
                   prompt: [{ text: 'Ok' }, { text: 'Cancel', style: 'cancel' }],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -204,7 +213,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   message,
                   keyboardType,
                   prompt: callbackOrButtons as RegularPromptButton[],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -218,7 +227,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   keyboardType,
                   secureTextEntry: true,
                   prompt: callbackOrButtons as RegularPromptButton[],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -231,7 +240,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   message,
                   keyboardType,
                   login: callbackOrButtons as LoginPromptButton[],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -243,7 +252,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   title,
                   message,
                   button: callbackOrButtons as AlertButton[],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -256,7 +265,7 @@ const AlertsProvider: React.FC<AlertsProviderProps> = ({ children, options }) =>
                   message,
                   keyboardType,
                   prompt: callbackOrButtons as RegularPromptButton[],
-                  ...(options && { options }),
+                  ...(alertOptions && { options: alertOptions }),
                   visible: true,
                 },
               });
@@ -474,15 +483,15 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-end',
   },
-  animate: 
-    Platform.OS === 'web' 
+  animate:
+    Platform.OS === 'web'
       ? {
-          flex:1
+          flex: 1,
         }
       : {
           flex: 1,
           marginVertical: -300,
-  },
+        },
   login: {
     marginBottom: 16,
   },

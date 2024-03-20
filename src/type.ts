@@ -110,5 +110,6 @@ export interface AlertAction {
 }
 
 export interface AlertsProviderProps {
-  options?: AlertsOptions
+  options?: AlertsOptions;
+  children: React.ReactNode;
 }
